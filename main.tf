@@ -20,8 +20,10 @@ provider "azurerm" {
 resource "azurerm_resource_group" "rg" {
   name     = "myResourceGroup"
   location = "East US"
+  tags = {
+    environment = "test"
+  }
 }
-
 resource "azurerm_storage_account" "sa" {
   name                     = "arinhsa01"
   resource_group_name      = azurerm_resource_group.rg.name
