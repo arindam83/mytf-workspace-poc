@@ -22,6 +22,10 @@ resource "azurerm_resource_group" "rg" {
   name     = "myResourceGroup"
   location = "East US"
 }
+resource "azurerm_resource_group" "rg1" {
+  name     = "myResourceGroup1"
+  location = "East US"
+}
 
 resource "azurerm_storage_account" "sa" {
   name                     = "arinhsa01"
