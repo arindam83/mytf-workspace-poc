@@ -41,3 +41,11 @@ resource "azurerm_storage_container" "container" {
   container_access_type = "private"
 }
 */
+
+module "avm-res-resources-resourcegroup" {
+  source = "git::https://github.com/arindam83/terraform-azurerm-avm-res-resources-resourcegroup.git?ref=main"
+  version = "0.2.1"
+    name     = "myResourceGroup21"
+  location = "East US"
+}
+  # insert the 2 required variables here
