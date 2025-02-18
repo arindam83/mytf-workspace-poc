@@ -38,6 +38,18 @@ module "my_module_rg" {
     managed_by  = "terraform-module"
   }
 }
+
+module "my_module_rg" {
+  source  = "app.terraform.io/arindam/resource-group/azurerm"
+  version = "1.0.0"  # Adjust version if different
+
+  resource_group_name = "module-created-rg-new"
+  location           = "East US"
+  tags = {
+    environment = "dev"
+    managed_by  = "terraform-module"
+  }
+}
 resource "azurerm_storage_account" "sa" {
   name                     = "arinhsa01"
   resource_group_name      = azurerm_resource_group.rg.name
