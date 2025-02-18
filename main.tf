@@ -48,4 +48,4 @@ module "avm-res-resources-resourcegroup" {
     name     = "myResourceGroup21"
   location = "East US"
 }
-  # insert the 2 required variables here
+  # insert the 2 required variables here 
