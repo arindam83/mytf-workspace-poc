@@ -27,6 +27,17 @@ resource "azurerm_resource_group" "rg2" {
   location = "East US"
 }
 
+module "my_module_rg" {
+  source  = "app.terraform.io/arindam/resource-group/azurerm"
+  version = "1.0.0"  # Adjust version if different
+
+  resource_group_name = "module-created-rg"
+  location           = "East US"
+  tags = {
+    environment = "dev"
+    managed_by  = "terraform-module"
+  }
+}
 resource "azurerm_storage_account" "sa" {
   name                     = "arinhsa01"
   resource_group_name      = azurerm_resource_group.rg.name
@@ -42,10 +53,4 @@ resource "azurerm_storage_container" "container" {
 }
 */
 
-module "avm-res-resources-resourcegroup" {
-  source   = "git::https://github.com/arindam83/terraform-azurerm-avm-res-resources-resourcegroup.git?ref=main"
-    version = "0.2.1"
-    name     = "myResourceGroup21"
-  location = "East US"
-}
-  # insert the 2 required variables here 
+
